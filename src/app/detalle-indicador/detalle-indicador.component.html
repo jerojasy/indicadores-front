@@ -1,0 +1,41 @@
+<div class="detalle-indicador" *ngIf="data | async as indicador">
+    <div class="valor" *ngFor="let items of indicador | keyvalue">
+        <ng-container *ngFor="let items of indicador | keyvalue">
+            <span *ngIf="items.key == 'IPCs'; else peso">%</span>
+            <ng-template #peso>
+                <span>$</span>
+            </ng-template>
+        </ng-container>
+        {{items.value[0].Valor}}
+    </div>
+
+    <ul>
+        <li>
+            <span>nombre</span>
+            <span *ngFor="let items of indicador | keyvalue">{{items.key}}</span>
+        </li>
+        <li>
+            <span>fecha</span>
+            <span *ngFor="let items of indicador | keyvalue">{{items.value[0].Fecha |
+                date: 'dd-MM-yyyy'}}</span>
+        </li>
+        <li>
+            <span>unidad</span>
+            <ng-container *ngFor="let items of indicador | keyvalue">
+                <span *ngIf="items.key == 'IPCs'; else peso">Porcentaje</span>
+                <ng-template #peso>
+                    <span>Peso</span>
+                </ng-template>
+            </ng-container>
+
+        </li>
+    </ul>
+
+    <div class="row">
+        <div class="col-md-12 text-center mt-5">
+            <button class="btn btn-primary" [routerLink]="['']">
+                Volver
+            </button>
+        </div>
+    </div>
+</div>

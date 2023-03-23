@@ -1,0 +1,35 @@
+$azul: #006fc5
+$gris: #cccccc
+
+.detalle-indicador
+    padding: 60px 20px 0 20px
+    max-width: 480px
+    width: 100%
+    margin: 0 auto
+    .valor
+        font-size: 40px
+        text-align: center
+        font-weight: bold
+        color: $azul
+        margin: 50px 0
+    ul
+        padding: 40px 20px
+        background-color: #ffffff
+        border-radius: 4px
+        box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.2)()
+        li
+            display: flex
+            justify-content: space-between
+            margin: 0 0 20px 0
+            border-bottom: 1px solid #f1f1f1
+            padding: 0 0 5px 0
+            align-items: center
+            color: #5e5e5e
+            &:last-child
+                border-bottom: 0px
+            span
+                &:nth-of-type(1)
+                    text-transform: capitalize
+                    font-weight: bold
+                &:nth-of-type(2)
+                    font-size: 12px
